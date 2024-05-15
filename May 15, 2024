@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+
+class count{
+public:
+	void setX(int value){
+		X = value;
+	}
+	void print(){
+		cout<<X<<endl;
+	}
+	private: 
+		int X;
+			
+};
+
+int main(){
+	count counter;
+	count *counterPtr = &counter;
+	count &counterRef = counter;
+	
+	cout<<"set X to 1 and print using the object's name: ";
+	counter.setX(1);
+	counter.print();
+	
+	cout<<"set X to 2 and print using a reference to an object: ";
+	counterRef.setX(2);
+	counterRef.print();
+	
+	cout<<"set X to 3 and print using a pointer to an object: ";
+	counterPtr -> setX(3);
+	counterPtr -> print();
+} 
