@@ -38,6 +38,17 @@ void insertatend(int data){
 	 } 
 	 point->next = lk;
 }
+void insertatpos(int pos, int data){
+	struct node * lk = (struct node*)malloc(sizeof(struct node));
+	lk->data = data;
+	struct node* point = head;
+	for(int i = 0; i < pos-1;i++){
+		point = point->next;
+	}
+	struct node * current = point->next;
+	point->next = lk;
+	lk->next = current; 
+}
 int main(){
    insertatbegin(12);
    insertatbegin(22);
@@ -45,6 +56,7 @@ int main(){
    insertatbegin(44);
    insertatbegin(50);
    insertatend(20);
+   insertatpos(2,0);
    cout << "Linked List: ";
    
    printList();
